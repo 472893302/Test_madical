@@ -19,7 +19,7 @@
 
 (function($, window, document, undefined){
 
-	// our plugin constructor
+	// 我们的插件的构造函数
 	var OnePageNav = function(elem, options){
 		this.elem = elem;
 		this.$elem = $(elem);
@@ -32,7 +32,7 @@
 		this.docHeight = this.$doc.height();
 	};
 
-	// the plugin prototype
+	// 插件的原型
 	OnePageNav.prototype = {
 		defaults: {
 			navItems: 'a',
@@ -48,27 +48,27 @@
 		},
 
 		init: function() {
-			// Introduce defaults that can be extended either
-			// globally or using an object literal.
+			// 引入可以扩展的默认值
+			// 全局的或使用对象文字.
 			this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
 			this.$nav = this.$elem.find(this.config.navItems);
 
-			//Filter any links out of the nav
+			//过滤出导航中的任何链接
 			if(this.config.filter !== '') {
 				this.$nav = this.$nav.filter(this.config.filter);
 			}
 
-			//Handle clicks on the nav
+			//导航手柄的点击
 			this.$nav.on('click.onePageNav', $.proxy(this.handleClick, this));
 
-			//Get the section positions
+			//获得部门职位
 			this.getPositions();
 
-			//Handle scroll changes
+			//处理滚动变化
 			this.bindInterval();
 
-			//Update the positions on resize too
+			//在调整大小时也更新位置
 			this.$win.on('resize.onePageNav', $.proxy(this.getPositions, this));
 
 			return this;

@@ -9,7 +9,7 @@
 		}
 	}
 	
-	//Update Header Style and Scroll to Top
+	//更新标题样式和滚动到顶部
 	function headerStyle() {
 		if($('.main-header').length){
 			var windowpos = $(window).scrollTop();
@@ -28,13 +28,13 @@
 	headerStyle();
 
 
-	//Submenu Dropdown Toggle
+	//子菜单下拉切换
 	if($('.main-header li.dropdown ul').length){
 		$('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>');
 		
 	}
 
-	//Mobile Nav Hide Show
+	//移动导航隐藏显示
 	if($('.mobile-menu').length){
 		
 		$('.mobile-menu .menu-box').mCustomScrollbar();
@@ -43,28 +43,28 @@
 		$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
 		$('.sticky-header .main-menu').append(mobileMenuContent);
 		
-		//Dropdown Button
+		//按钮下拉菜单
 		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
 			$(this).toggleClass('open');
 			$(this).prev('ul').slideToggle(500);
 		});
-		//Dropdown Button
+		//按钮下拉菜单
 		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
 			$(this).prev('.megamenu').slideToggle(900);
 		});
-		//Menu Toggle Btn
+		//菜单切换按钮
 		$('.mobile-nav-toggler').on('click', function() {
 			$('body').addClass('mobile-menu-visible');
 		});
 
-		//Menu Toggle Btn
+		//菜单切换按钮
 		$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
 			$('body').removeClass('mobile-menu-visible');
 		});
 	}
 
 
-	// Scroll to a Specific Div
+	// 滚动到一个特定的Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").on('click', function() {
 			var target = $(this).attr('data-target');
@@ -84,8 +84,8 @@
 		wow.init();
 	}
 
-	//Contact Form Validation
-	if($('#contact-form').length){
+	//联系表单验证
+	/*if($('#contact-form').length){
 		$('#contact-form').validate({
 			rules: {
 				username: {
@@ -106,9 +106,9 @@
 				}
 			}
 		});
-	}
+	}*/
 
-	//Fact Counter + Text Count
+	//事件计数器+文本计数
 	if($('.count-box').length){
 		$('.count-box').appear(function(){
 	
@@ -150,7 +150,7 @@
 	}
 
 
-	//Tabs Box
+	//标签的盒子
 	if($('.tabs-box').length){
 		$('.tabs-box .tab-buttons .tab-btn').on('click', function(e) {
 			e.preventDefault();
@@ -171,7 +171,7 @@
 
 
 
-	//Accordion Box
+	//手风琴的盒子
 	if($('.accordion-box').length){
 		$(".accordion-box").on('click', '.acc-btn', function() {
 			
@@ -195,7 +195,7 @@
 	}
 
 
-    //three-item-carousel
+    //感言部分
 	if ($('.three-item-carousel').length) {
 		$('.three-item-carousel').owlCarousel({
 			loop:true,
@@ -346,13 +346,13 @@
 	}
 
 
-	//Add One Page nav
+	//添加一个页面导航
 	if($('.scroll-nav').length) {
 		$('.scroll-nav').onePageNav();
 	}
 
 
-	//Sortable Masonary with Filters
+	//可分类的 Masonary 过滤器
 	function enableMasonry() {
 		if($('.sortable-masonry').length){
 	
@@ -373,10 +373,9 @@
 			});
 			
 	
-			// Isotope Filter 
+			// 同位素过滤器
 			$filter.find('li').on('click', function(){
 				var selector = $(this).attr('data-filter');
-	
 				try {
 					$container.isotope({ 
 						filter	: selector,
@@ -422,7 +421,7 @@
 	enableMasonry();
 
 
-    // Progress Bar
+    // 进度条
 	if ($('.count-bar').length) {
 		$('.count-bar').appear(function(){
 			var el = $(this);
@@ -433,7 +432,7 @@
 	}
 
 
-	// page direction
+	// 页面方向
 	function directionswitch() {
 	  	if ($('.page_direction').length) {
 
@@ -461,8 +460,8 @@
 
 	if($('.paroller').length){
 		$('.paroller').paroller({
-			  factor: 0.1,            // multiplier for scrolling speed and offset, +- values for direction control  
-			  factorLg: 0.1,          // multiplier for scrolling speed and offset if window width is less than 1200px, +- values for direction control  
+			  factor: 0.1,            // 用于滚动速度和偏移量的乘数, +- 用于方向控制的值
+			  factorLg: 0.1,          // 如果窗口宽度小于1200px，用于滚动速度和偏移量的倍增器，+-值用于方向控制
 			  type: 'foreground',     // background, foreground  
 			  direction: 'vertical' // vertical, horizontal  
 		});
@@ -482,7 +481,7 @@
       $('select:not(.ignore)').niceSelect();
     });
 
-    // Date picker
+    // 日期选择器
 	function datepicker () {
 	    if ($('#datepicker').length) {
 	        $('#datepicker').datepicker();
@@ -491,7 +490,7 @@
 
 
 
-	// Time picker
+	// 时间选择器
 	function timepicker () {
 	    if ($('input[name="time"]').length) {
 	        $('input[name="time"]').ptTimeSelect();

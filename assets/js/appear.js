@@ -13,10 +13,10 @@
 
         var settings = $.extend({
 
-            //arbitrary data to pass to fn
+            //传递给fn的任意数据
             data: undefined,
 
-            //call fn only on the first appear?
+            //只在第一次出现时调用fn?
             one: true,
 
             // X & Y accuracy
@@ -29,30 +29,30 @@
 
             var t = $(this);
 
-            //whether the element is currently visible
+            //元素当前是否可见
             t.appeared = false;
 
             if (!fn) {
 
-                //trigger the custom event
+                //触发自定义事件
                 t.trigger('appear', settings.data);
                 return;
             }
 
             var w = $(window);
 
-            //fires the appear event when appropriate
+            //在适当的时候触发appear事件
             var check = function() {
 
-                //is the element hidden?
+                //元素是否隐藏?
                 if (!t.is(':visible')) {
 
-                    //it became hidden
+                    //它变成了隐藏
                     t.appeared = false;
                     return;
                 }
 
-                //is the element inside the visible window?
+                //元素是否在可见窗口内?
                 var a = w.scrollLeft();
                 var b = w.scrollTop();
                 var o = t.offset();
@@ -71,43 +71,43 @@
                     x + tw + ax >= a &&
                     x <= a + ww + ax) {
 
-                    //trigger the custom event
+                    //触发自定义事件
                     if (!t.appeared) t.trigger('appear', settings.data);
 
                 } else {
 
-                    //it scrolled out of view
+                    //它滚动着看不见了
                     t.appeared = false;
                 }
             };
 
-            //create a modified fn with some additional logic
+            //使用一些附加逻辑创建一个修改过的fn
             var modifiedFn = function() {
 
-                //mark the element as visible
+                //将元素标记为可见的
                 t.appeared = true;
 
-                //is this supposed to happen only once?
+                //这只会发生一次吗?
                 if (settings.one) {
 
-                    //remove the check
+                    //去掉这个勾选点
                     w.unbind('scroll', check);
                     var i = $.inArray(check, $.fn.appear.checks);
                     if (i >= 0) $.fn.appear.checks.splice(i, 1);
                 }
 
-                //trigger the original fn
+                //触发原始fn
                 fn.apply(this, arguments);
             };
 
-            //bind the modified fn to the element
+            //将修改后的fn绑定到元素
             if (settings.one) t.one('appear', settings.data, modifiedFn);
             else t.bind('appear', settings.data, modifiedFn);
 
-            //check whenever the window scrolls
+            //检查窗口何时滚动
             w.scroll(check);
 
-            //check whenever the dom changes
+            //每当dom改变时检查
             $.fn.appear.checks.push(check);
 
             //check now
@@ -134,7 +134,7 @@
         }
     });
 
-    //run checks when these methods are called
+    //调用这些方法时运行检查
     $.each(['append', 'prepend', 'after', 'before', 'attr',
         'removeAttr', 'addClass', 'removeClass', 'toggleClass',
         'remove', 'css', 'show', 'hide'], function(i, n) {
