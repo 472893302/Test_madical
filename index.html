@@ -23,6 +23,22 @@
 <link href="assets/css/color.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
+    <!--导入jquery-->
+    <script src="assets/js/jquery.js"></script>
+    <script>
+        $(function (){
+            $("#search_submit").click(function (){
+                var rname = $("#search_input").val();
+                location.href="http://localhost:63342/Test_madical/clinic-1.html"
+
+            })
+
+
+
+        })
+
+
+    </script>
 
 </head>
 
@@ -114,7 +130,6 @@
         </header>
         <!-- 导航条部分结束 -->
 
-
         <!-- 搜索框部分 -->
         <section class="banner-section centred style-three" style="background-image: url(assets/images/banner/banner-bg-2.jpg);">
             <div class="anim-icon">
@@ -135,8 +150,9 @@
                     <div class="form-inner">
                         <form action="index.html" method="post">
                             <div class="form-group">
-                                <input type="text" name="name" placeholder="医院、医生、科室..." required="">
-                                <button type="submit"><i class="icon-Arrow-Right"></i></button>
+                                <input type="text" id="search_input" name="name" placeholder="请医院名称或医生姓名..." required="">
+                                <button type="button" id="search_submit" ><i class="icon-Arrow-Right"></i></button>
+
                             </div>
                         </form>
                         <ul class="select-box clearfix">
@@ -155,7 +171,7 @@
                             <li>
                                 <div class="single-checkbox">
                                     <input type="radio" name="check-box" id="check3">
-                                    <label for="check3"><span></span>诊所</label>
+                                    <label for="check3"><span></span>医院</label>
                                 </div>
                             </li>
                         </ul>
@@ -639,7 +655,7 @@
 
 
     <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
+
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.js"></script>

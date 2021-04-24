@@ -26,6 +26,27 @@
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
+    <script src="assets/js/jquery.js"></script>
+    <script>
+        $(function (){
+            $("#btn_sub").click(function (){
+                $.post("loginServlet",$("#loginForm").serialize(),function (data){
+                    if(data.flag){
+                        //登录成功
+                        location.href="index.html";
+                    }else{
+                        //登录失败
+                        $("#errorMsg")
+                    }
+                })
+            })
+
+        })
+
+
+
+
+    </script>
 </head>
 
 
@@ -39,7 +60,7 @@
         <!-- preloader -->
 
 
-        <!-- main header -->
+        <!-- 导航条部分 -->
         <header class="main-header style-two">
             <!-- header-lower -->
             <div class="header-lower">
@@ -119,38 +140,10 @@
                 </div>
             </div>
         </header>
-        <!-- main-header end -->
-
-        <!-- Mobile Menu  -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-            
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
-                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
-                <div class="contact-info">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    </ul>
-                </div>
-                <div class="social-links">
-                    <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div><!-- End Mobile Menu -->
+        <!-- 导航条部分结束 -->
 
 
-        <!--page-title-two-->
+        <!--头部-->
         <section class="page-title-two">
             <div class="title-box centred bg-color-2">
                 <div class="pattern-layer">
@@ -172,10 +165,10 @@
                 </div>
             </div>
         </section>
-        <!--page-title-two end-->
+        <!--头部结束-->
 
 
-        <!-- registration-section -->
+        <!-- 登录部分 -->
         <section class="registration-section bg-color-3">
             <div class="pattern">
                 <div class="pattern-1" style="background-image: url(assets/images/shape/shape-85.png);"></div>
@@ -189,15 +182,18 @@
                             <!--<a href="register-page.html">账号?</a>-->
                         </div>
                         <div class="inner">
-                            <form action="register-page.html" method="post" class="registration-form">
+                            <form action="register-page.html" method="post" class="registration-form" id="loginForm">
                                 <div class="row clearfix">
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <div id="errorMsg" style="color: red;text-align: center"></div>
                                         <label>账号</label>
-                                        <input type="email" name="email" placeholder="输入你的账号" required="">
+                                        <input type="text" name="text" placeholder="输入你的账号" required="">
+
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <label>密码</label>
                                         <input type="password" name="password" placeholder="输入你的密码" required="">
+
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <div class="forgot-passowrd clearfix">
@@ -205,7 +201,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                        <button type="submit" class="theme-btn-one">立即登录<i class="icon-Arrow-Right"></i></button>
+                                        <button type="submit" class="theme-btn-one" id="btn_sub">立即登录<i class="icon-Arrow-Right"></i></button>
                                     </div>
                                 </div>
                             </form>
@@ -220,122 +216,11 @@
                 </div>
             </div>
         </section>
-        <!-- registration-section end -->
-
-
-        <!-- agent-section -->
-       <!-- <section class="agent-section bg-color-3">
-            <div class="auto-container">
-                <div class="inner-container bg-color-2">
-                    <div class="row clearfix">
-                        <div class="col-lg-6 col-md-12 col-sm-12 left-column">
-                            <div class="content_block_3">
-                                <div class="content-box">
-                                    <h3>Emergency call</h3>
-                                    <div class="support-box">
-                                        <div class="icon-box"><i class="fas fa-phone"></i></div>
-                                        <span>Telephone</span>
-                                        <h3><a href="">+(111) 65_458_856</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 col-sm-12 right-column">
-                            <div class="content_block_4">
-                                <div class="content-box">
-                                    <h3>Sign up for Email</h3>
-                                    <form action="index.html" method="post" class="subscribe-form">
-                                        <div class="form-group">
-                                            <input type="email" name="email" placeholder="Your Email" required="">
-                                            <button type="submit" class="theme-btn-one">Submit now<i class="icon-Arrow-Right"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>-->
-        <!-- agent-section -->
+        <!-- 登录部分结束 -->
 
 
         <!-- main-footer -->
         <footer class="main-footer">
-            <!-- <div class="footer-top">
-                 <div class="pattern-layer">
-                     <div class="pattern-1" style="background-image: url(assets/images/shape/shape-30.png);"></div>
-                     <div class="pattern-2" style="background-image: url(assets/images/shape/shape-31.png);"></div>
-                 </div>
-                 <div class="auto-container">
-                     <div class="widget-section">
-                         <div class="row clearfix">
-                             <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                                 <div class="footer-widget logo-widget">
-                                     <figure class="footer-logo"><a href="index.html"><img src="assets/images/footer-logo.png" alt=""></a></figure>
-                                     <div class="text">
-                                         <p>Lorem ###.</p>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
-                                 <div class="footer-widget links-widget">
-                                     <div class="widget-title">
-                                         <h3>关于</h3>
-                                     </div>
-                                     <div class="widget-content">
-                                         <ul class="links clearfix">
-                                             <li><a href="index.html">关于我们</a></li>
-                                             <li><a href="index.html">清单</a></li>
-                                            &lt;!&ndash; <li><a href="index.html">How It Works</a></li>&ndash;&gt;
-                                             <li><a href="index.html">我们的服务</a></li>
-                                             <li><a href="index.html">我们的博客</a></li>
-                                             <li><a href="index.html">联系我们</a></li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                 <div class="footer-widget links-widget">
-                                     <div class="widget-title">
-                                         <h3>链接</h3>
-                                     </div>
-                                     <div class="widget-content">
-                                         <ul class="links clearfix">
-                                             <li><a href="index.html">专家</a></li>
-                                             <li><a href="index.html">诊所</a></li>
-                                             <li><a href="index.html">医院</a></li>
-                                             <li><a href="index.html">下载</a></li>
-                                             <li><a href="index.html">加入医生</a></li>
-                                             <li><a href="index.html">隐私政策</a></li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                 <div class="footer-widget contact-widget">
-                                     <div class="widget-title">
-                                         <h3>联系</h3>
-                                     </div>
-                                     <div class="widget-content">
-                                         <ul class="info-list clearfix">
-                                             <li><i class="fas fa-map-marker-alt"></i>
-                                                 位置
-                                             </li>
-                                             <li><i class="fas fa-microphone"></i>
-                                                 <a href="">+2(305) 587-3407</a>
-                                             </li>
-                                             <li><i class="fas fa-envelope"></i>
-                                                 <a href="mailto:info@example.com">info@example.com</a>
-                                             </li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>-->
             <div class="footer-bottom">
                 <div class="auto-container">
                     <div class="inner-box clearfix">
@@ -359,7 +244,7 @@
 
 
     <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
+
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.js"></script>

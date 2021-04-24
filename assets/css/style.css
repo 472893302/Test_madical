@@ -1469,7 +1469,7 @@ div#mCSB_1_container{
   font-size: 16px;
   color: #848484;
   border: 1px solid #fff;
-  box-shadow: 0 10px 30px rgb(57 202 187 / 15%);
+  box-shadow: 0 10px 30px rgb(57 202 187 /15%);
   transition: all 500ms ease;
 }
 
@@ -4028,7 +4028,7 @@ div#mCSB_1_container{
 .image_block_3 .image-box{
   position: relative;
   padding: 0px 60px 95px 100px;
-  margin-right: 
+
 }
 
 .about-style-two .image_block_3 .image-box{
@@ -7926,7 +7926,7 @@ div#mCSB_1_container{
 
 .registration-section .content-box .inner .social-links{
   position: relative;
-  margin-top: 
+
 }
 
 .registration-section .content-box .inner .text{
