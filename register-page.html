@@ -26,7 +26,7 @@
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
-    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script>
         //表单效验
         //账号效验
@@ -48,9 +48,11 @@
             var password = $("#password").val();
             var reg_password = /^\w{8,20}$/;
             var flag=reg_password.test(password);
-            if(flag){
+            if (flag) {
+                $("#password").css("border","");
 
-            }else{
+            } else {
+                $("#password").css("border","1px solid red");
 
             }
             return flag;
@@ -58,12 +60,14 @@
         }
         //密码效验2
         function checksPassWord(){
-            var spassword = $("#spassword").val();
-            var reg_spassword = /^\w{8,20}$/;
-            var flag=reg_spassword.test(spassword);
-            if(flag){
+            var cpassword = $("#cpassword").val();
+            var reg_cpassword = /^\w{8,20}$/;
+            var flag=reg_cpassword.test(cpassword);
+            if (flag) {
+                $("#cpassword").css("border","");
 
-            }else{
+            } else {
+                $("#cpassword").css("border","1px solid red");
 
             }
             return flag;
@@ -73,12 +77,12 @@
 
         $(function (){
             $("#registerForm").submit(function (){
-                if(checkUserName() & checkPassWord() & checkPassWord()){
+                if( checkUserName() & checkPassWord() & checkPassWord()){
                     $.post("registUserServlet",$(this).serialize(),function (data){
 
                     });
                 }
-                return flase;
+                return false;
             });
             $("#username").blur(checkUserName());
             $("password").blur(checkPassWord());
@@ -100,7 +104,7 @@
         <!-- preloader -->
 
 
-        <!-- main header -->
+        <!-- 导航条部分 -->
         <header class="main-header style-two">
             <!-- header-lower -->
             <div class="header-lower">
@@ -190,7 +194,7 @@
                 </div>
             </div>
         </header>
-        <!-- main-header end -->
+        <!-- 导航条部分结束 -->
 
 
         <!--头部-->
@@ -283,7 +287,7 @@
 
 
 
-        <!-- main-footer -->
+        <!-- 尾部 -->
         <footer class="main-footer">
             <!-- <div class="footer-top">
                  <div class="pattern-layer">
@@ -371,10 +375,10 @@
                 </div>
             </div>
         </footer>
-        <!-- main-footer end -->
+        <!-- 尾部结束 -->
 
 
-        <!--Scroll to top-->
+        <!--按钮-->
         <button class="scroll-top scroll-to-target" data-target="html">
             <span class="fa fa-arrow-up"></span>
         </button>
