@@ -39,7 +39,7 @@
         <!-- preloader -->
 
 
-        <!-- main header -->
+        <!-- 导航条部分 -->
         <header class="main-header style-two">
             <!-- header-lower -->
             <div class="header-lower">
@@ -60,6 +60,12 @@
                                     <ul class="navigation clearfix">
                                         <li class="current dropdown"><a href="index.html">首页</a>
                                         </li>
+
+                                        <li class="dropdown"><a href="index.html">医院</a>
+                                            <ul>
+                                                <li><a href="clinic-1.html">医院查看</a></li>
+                                            </ul>
+                                        </li>
                                         <li class="dropdown"><a href="index.html">医生</a>
                                             <ul>
                                                 <li class="dropdown"><a href="doctors.html">医生分类</a>
@@ -77,12 +83,6 @@
                                                 <li><a href="doctors.html">医生热度排行</a></li>
 
                                                 </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown"><a href="index.html">医院</a>
-                                            <ul>
-                                                <li><a href="clinic-1.html">医院查看</a></li>
                                             </ul>
                                         </li>
 
@@ -129,11 +129,11 @@
                 </div>
             </div>
         </header>
-        <!-- main-header end -->
+        <!-- 导航条部分结束 -->
 
 
 
-        <!--page-title-two-->
+        <!--头部-->
         <section class="page-title-two">
             <div class="title-box centred bg-color-2">
                 <div class="pattern-layer">
@@ -142,7 +142,7 @@
                 </div>
                 <div class="auto-container">
                     <div class="title">
-                        <h1>诊所清单</h1>
+                        <h1>医院</h1>
                     </div>
                 </div>
             </div>
@@ -150,74 +150,56 @@
                 <div class="auto-container">
                     <ul class="bread-crumb clearfix">
                         <li><a href="index.html">首页</a></li>
-                        <li>诊所清单</li>
+                        <li>医院</li>
                     </ul>
                 </div>
             </div>
         </section>
-        <!--page-title-two end-->
+        <!--头部结束-->
 
-
+        <!--搜索框-->
         <div class="select-field bg-color-3">
             <div class="auto-container">
                 <div class="content-box">
-                    <div class="form-inner clearfix">
+                    <div class="form-inner clearfix" style="display: flex;justify-content: center">
                         <form action="index.html" method="post">
                             <div class="form-group clearfix">
                                 <select class="wide">
-                                   <option data-display="Select Location">选择位置</option>
+                                   <option data-display="位置选择">位置选择</option>
                                    <option value="1">1</option>
                                    <option value="2">2</option>
                                    <option value="3">3</option>
                                    <option value="4">4</option>
                                 </select>
-                                <input type="text" name="name" placeholder="医生、医院、诊所..." required="">
+                                <input type="text" name="name" placeholder="医院名称..." required="">
                                 <button type="submit"><i class="icon-Arrow-Right"></i></button>
                             </div>
                         </form>
-                        <ul class="select-box clearfix">
-                            <li>
-                                <div class="single-checkbox">
-                                    <input type="radio" name="check-box" id="check1">
-                                    <label for="check1"><span></span>全部</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="single-checkbox">
-                                    <input type="radio" name="check-box" id="check2">
-                                    <label for="check2"><span></span>医生</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="single-checkbox">
-                                    <input type="radio" name="check-box" id="check3" checked="">
-                                    <label for="check3"><span></span>诊所</label>
-                                </div>
-                            </li>
-                        </ul>
+
                     </div>
                 </div>
             </div>
         </div>
+        <!--搜索框结束-->
 
 
-        <!-- clinic-section -->
+        <!-- 医院部分 -->
         <section class="clinic-section">
             <div class="auto-container">
                 <div class="row clearfix">
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="item-shorting clearfix">
                             <div class="left-column pull-left">
-                                <h3>显示20个结果中的1-6个</h3>
+                                <h3>显示结果</h3>
                             </div>
                             <div class="right-column pull-right clearfix">
                                 <div class="short-box clearfix">
                                     <div class="select-box">
                                         <select class="wide">
-                                           <option data-display="排序方式">排序方式</option>
-                                           <option value="1">心脏科</option>
-                                           <option value="2">2</option>
-                                           <option value="4">3</option>
+                                           <option data-display="类别选择">类别选择</option>
+                                           <option value="1">重庆</option>
+                                           <option value="2">四川</option>
+                                           <option value="4">北京</option>
                                         </select>
                                     </div>
                                 </div>
@@ -739,6 +721,12 @@
                                 <li><a href="clinic-1.html"><i class="icon-Arrow-Right"></i></a></li>
                             </ul>
                         </div>
+                        <br>
+                        <div class="page">
+                            <i></i>共
+                            <span id="totalPage">12</span>页<span id="totalCount">10</span>条
+
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                         <div class="map-inner ml-10">
@@ -760,46 +748,10 @@
                 </div>
             </div>
         </section>
-        <!-- clinic-section end -->
+        <!-- 医院部分结束 -->
 
 
-       <!-- <section class="agent-section">
-            <div class="auto-container">
-                <div class="inner-container bg-color-2">
-                    <div class="row clearfix">
-                        <div class="col-lg-6 col-md-12 col-sm-12 left-column">
-                            <div class="content_block_3">
-                                <div class="content-box">
-                                    <h3>紧急电话</h3>
-                                    <div class="support-box">
-                                        <div class="icon-box"><i class="fas fa-phone"></i></div>
-                                        <span>电话</span>
-                                        <h3><a href="">+(111) 65_458_856</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 col-sm-12 right-column">
-                            <div class="content_block_4">
-                                <div class="content-box">
-                                    <h3>注册电子邮箱</h3>
-                                    <form action="index.html" method="post" class="subscribe-form">
-                                        <div class="form-group">
-                                            <input type="email" name="email" placeholder="你的邮箱" required="">
-                                            <button type="submit" class="theme-btn-one">提交<i class="icon-Arrow-Right"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>-->
-        <!-- agent-section -->
-
-
-        <!-- main-footer -->
+        <!-- 尾部 -->
         <footer class="main-footer">
             <!-- <div class="footer-top">
                  <div class="pattern-layer">
@@ -887,7 +839,7 @@
                 </div>
             </div>
         </footer>
-        <!-- main-footer end -->
+        <!-- 尾部 -->
 
 
         <!--Scroll to top-->

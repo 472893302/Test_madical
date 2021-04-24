@@ -76,6 +76,12 @@
                                     <ul class="navigation clearfix">
                                         <li class="current dropdown"><a href="index.html">首页</a>
                                         </li>
+
+                                        <li class="dropdown"><a href="index.html">医院</a>
+                                            <ul>
+                                                <li><a href="clinic-1.html">医院查看</a></li>
+                                            </ul>
+                                        </li>
                                         <li class="dropdown"><a href="index.html">医生</a>
                                             <ul>
                                                 <li class="dropdown"><a href="doctors.html">医生分类</a>
@@ -93,12 +99,6 @@
                                                 <li><a href="doctors.html">医生热度排行</a></li>
 
                                                 </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown"><a href="index.html">医院</a>
-                                            <ul>
-                                                <li><a href="clinic-1.html">医院查看</a></li>
                                             </ul>
                                         </li>
 
@@ -172,11 +172,11 @@
         </section>
         <!--page-title-two end-->
 
-
+        <!--搜索框-->
         <div class="select-field bg-color-3">
             <div class="auto-container">
                 <div class="content-box">
-                    <div class="form-inner clearfix">
+                    <div class="form-inner clearfix" style="display: flex;justify-content: center">
                         <form action="index.html" method="post">
                             <div class="form-group clearfix">
                                 <select class="wide">
@@ -196,33 +196,13 @@
                                 <button type="submit"><i class="icon-Arrow-Right"></i></button>
                             </div>
                         </form>
-                        <ul class="select-box clearfix">
-                            <li>
-                                <div class="single-checkbox">
-                                    <input type="radio" name="check-box" id="check1">
-                                    <label for="check1"><span></span>全部</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="single-checkbox">
-                                    <input type="radio" name="check-box" id="check2">
-                                    <label for="check2"><span></span>医生</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="single-checkbox">
-                                    <input type="radio" name="check-box" id="check3" checked="">
-                                    <label for="check3"><span></span>医生</label>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <!--搜索框结束-->
 
-
-        <!-- doctors-page-section -->
+        <!-- 显示医生部分 -->
         <section class="clinic-section doctors-page-section">
             <div class="auto-container">
                 <div class="row clearfix">
@@ -795,7 +775,7 @@
                 </div>
             </div>
         </section>
-        <!-- doctors-page-section end -->
+        <!-- 显示医生部分结束 -->
 
 
 
